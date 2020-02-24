@@ -1,0 +1,103 @@
+{
+  "ModelName": "PoppyDemo",
+  "ModelMetadata": {
+    "Author": "",
+    "DateCreated": "Feb 18, 2020, 5:07 PM",
+    "DateLastModified": "Feb 24, 2020, 11:10 AM",
+    "Description": ""
+  },
+  "DataModel": [
+    {
+      "TableName": "poppies",
+      "KeyAttributes": {
+        "PartitionKey": {
+          "AttributeName": "date",
+          "AttributeType": "N"
+        },
+        "SortKey": {
+          "AttributeName": "number",
+          "AttributeType": "N"
+        }
+      },
+      "NonKeyAttributes": [
+        {
+          "AttributeName": "firstName",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "lastName",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "conflict",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "branch",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "birthYear",
+          "AttributeType": "N"
+        },
+        {
+          "AttributeName": "deathYear",
+          "AttributeType": "N"
+        },
+        {
+          "AttributeName": "rank",
+          "AttributeType": "S"
+        }
+      ],
+      "GlobalSecondaryIndexes": [
+        {
+          "IndexName": "fullName",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "lastName",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "firstName",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        }
+      ],
+      "TableData": [
+        {
+          "date": {
+            "N": "42874"
+          },
+          "number": {
+            "N": "39475694444"
+          },
+          "firstName": {
+            "S": "William"
+          },
+          "lastName": {
+            "S": "Hezlep"
+          },
+          "branch": {
+            "S": "U.S. Air Force"
+          },
+          "birthYear": {
+            "N": "1914"
+          },
+          "deathYear": {
+            "N": "1994"
+          },
+          "rank": {
+            "S": "Colonel"
+          }
+        }
+      ],
+      "DataAccess": {
+        "MySql": {}
+      }
+    }
+  ]
+}
